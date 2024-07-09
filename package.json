@@ -1,6 +1,6 @@
 {
   "name": "@rubenarakelyan/stimulus-konami-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "engines": {
     "node": ">=18"
@@ -32,7 +32,8 @@
     "components"
   ],
   "files": [
-    "./dist/index.mjs"
+    "./dist/index.mjs",
+    "./dist/index.mjs.map"
   ],
   "author": "Ruben Arakelyan <ruben@arakelyan.uk>",
   "license": "MIT",
