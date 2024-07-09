@@ -1,0 +1,57 @@
+{
+  "name": "@rubenarakelyan/stimulus-konami-code",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "description": "A Stimulus controller that implements the Konami code",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.mjs"
+      }
+    }
+  },
+  "scripts": {
+    "eslint": "eslint './src/*.js' eslint.config.mjs",
+    "prettier": "prettier -c './src/*.js' eslint.config.mjs",
+    "lint": "concurrently -c auto npm:eslint npm:prettier",
+    "build": "esbuild src/index.js --format=esm --target=es2020 --minify --bundle --sourcemap=external --external:@hotwired/stimulus --outfile=dist/index.mjs",
+    "format": "prettier -w './src/*.js' eslint.config.mjs",
+    "prepare": "concurrently -m 1 -c auto npm:lint npm:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubenarakelyan/stimulus-konami-code.git"
+  },
+  "keywords": [
+    "stimulus",
+    "stimulusjs",
+    "controller",
+    "components"
+  ],
+  "files": [
+    "./dist/index.mjs"
+  ],
+  "author": "Ruben Arakelyan <ruben@arakelyan.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rubenarakelyan/stimulus-konami-code/issues"
+  },
+  "homepage": "https://github.com/rubenarakelyan/stimulus-konami-code#readme",
+  "peerDependencies": {
+    "@hotwired/stimulus": ">= 3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.23.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^15.8.0",
+    "prettier": "^3.3.2"
+  }
+}
